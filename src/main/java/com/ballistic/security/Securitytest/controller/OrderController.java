@@ -51,6 +51,23 @@ public class OrderController {
         return new ResponseEntity<Order>(HttpStatus.NOT_FOUND);
     }
 
+    @RequestMapping(value = "/add",method = RequestMethod.POST)
+    public ResponseEntity<Void> newOrder() {
+
+        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+    }
+
+    @RequestMapping(value = "/update/{id}",method = RequestMethod.PUT)
+    public ResponseEntity<Void> updateOrder(@PathVariable("id") Long id) {
+
+        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+    }
+
+    @RequestMapping(value = "/homePage",method = RequestMethod.GET)
+    public ResponseEntity<Void> homePage() {
+
+        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+    }
 
 
 
