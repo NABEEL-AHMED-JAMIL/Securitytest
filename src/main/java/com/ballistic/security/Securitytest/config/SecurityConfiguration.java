@@ -36,6 +36,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
+        // adding the register antMatcher
         http.httpBasic().and().authorizeRequests().
                 antMatchers(HttpMethod.GET, "/homePage").access("hasRole('USER') or hasRole('ADMIN') or hasRole('DBA')").
                 antMatchers(HttpMethod.GET, "/read").hasAnyRole("USER", "ADMIN", "DBA").
