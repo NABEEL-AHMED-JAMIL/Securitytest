@@ -14,6 +14,7 @@ import java.util.List;
 /**
  * Created by Lycus 01 on 6/18/2017.
  */
+
 @RestController
 public class OrderController {
 
@@ -32,32 +33,32 @@ public class OrderController {
         return new ResponseEntity<List<Order>>(orders, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/delete/{id}",method = RequestMethod.DELETE)
-    public ResponseEntity<Order> deleteOrderItem(@PathVariable("id") Long id) {
+//    @RequestMapping(value = "/delete/{id}",method = RequestMethod.DELETE)
+//    public ResponseEntity<Order> deleteOrderItem(@PathVariable("id") Long id) {
+//
+//        // delete the order item from the user
+//        orders  = fectchDataService.readData();
+//        for (Order order : orders) {
+//            if(order.getId() == id){
+//                return new ResponseEntity<Order>(order,HttpStatus.OK);
+//            }
+//        }
+//        return new ResponseEntity<Order>(HttpStatus.NOT_FOUND);
+//    }
 
-        // delete the order item from the user
-        orders  = fectchDataService.readData();
-        for (Order order : orders) {
-            if(order.getId() == id){
-                return new ResponseEntity<Order>(order,HttpStatus.OK);
-            }
-        }
-        return new ResponseEntity<Order>(HttpStatus.NOT_FOUND);
-    }
 
-
-    @RequestMapping(value = "/delete/{id}",method = RequestMethod.DELETE)
-    public ResponseEntity<Order> deleteOrder(@PathVariable("id") Long id) {
-
-        // delete the whole Order from the user
-        orders  = fectchDataService.readData();
-        for (Order order : orders) {
-            if(order.getId() == id){
-                return new ResponseEntity<Order>(order,HttpStatus.OK);
-            }
-        }
-        return new ResponseEntity<Order>(HttpStatus.NOT_FOUND);
-    }
+//    @RequestMapping(value = "/delete/{id}",method = RequestMethod.DELETE)
+//    public ResponseEntity<Order> deleteOrder(@PathVariable("id") Long id) {
+//
+//        // delete the whole Order from the user
+//        orders  = fectchDataService.readData();
+//        for (Order order : orders) {
+//            if(order.getId() == id){
+//                return new ResponseEntity<Order>(order,HttpStatus.OK);
+//            }
+//        }
+//        return new ResponseEntity<Order>(HttpStatus.NOT_FOUND);
+//    }
 
     @RequestMapping(value = "/add",method = RequestMethod.POST)
     public ResponseEntity<Void> newOrder() {
