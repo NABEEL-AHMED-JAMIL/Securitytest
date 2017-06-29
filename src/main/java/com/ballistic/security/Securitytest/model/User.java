@@ -1,13 +1,11 @@
 package com.ballistic.security.Securitytest.model;
 
 
-import org.hibernate.validator.constraints.Length;
-
 import javax.persistence.*;
 import java.util.Set;
 
 /**
- * Created by Lycus 01 on 6/18/2017.
+ * Created by Ballistic Inc on 6/18/2017.
  */
 @Entity
 @Table(name = "user")

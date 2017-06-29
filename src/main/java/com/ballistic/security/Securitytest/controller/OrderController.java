@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * Created by Lycus 01 on 6/18/2017.
+ * Created by Ballistic Inc on 6/18/2017.
  */
 
 @RestController
@@ -22,6 +22,30 @@ public class OrderController {
     private FectchDataService fectchDataService;
 
     private List<Order> orders;
+
+    @RequestMapping(value = "/",method = RequestMethod.GET)
+    public String getWord() {
+        return "Hellow Nabeel";
+    }
+
+    @RequestMapping(value = "/private",method = RequestMethod.GET)
+    public String getPrivateWord() {
+        return "Hellow Nabeel";
+    }
+
+    @RequestMapping(value = "/homePage",method = RequestMethod.GET)
+    public ResponseEntity<Void> homePage() {
+
+        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+    }
+
+    @RequestMapping(value = "/add",method = RequestMethod.POST)
+    public ResponseEntity<Void> newOrder() {
+        // adding the new order
+
+        return new ResponseEntity<Void>(HttpStatus.OK);
+    }
+
 
     @RequestMapping(value = "/read", method = RequestMethod.GET)
     public ResponseEntity<List<Order>> readData(){
@@ -33,9 +57,10 @@ public class OrderController {
         return new ResponseEntity<List<Order>>(orders, HttpStatus.OK);
     }
 
-//    @RequestMapping(value = "/delete/{id}",method = RequestMethod.DELETE)
-//    public ResponseEntity<Order> deleteOrderItem(@PathVariable("id") Long id) {
-//
+
+    @RequestMapping(value = "/delete/{orderItemId}",method = RequestMethod.DELETE)
+    public ResponseEntity<Void> deleteOrderItem(@PathVariable("orderItemId") Long id) {
+
 //        // delete the order item from the user
 //        orders  = fectchDataService.readData();
 //        for (Order order : orders) {
@@ -44,12 +69,13 @@ public class OrderController {
 //            }
 //        }
 //        return new ResponseEntity<Order>(HttpStatus.NOT_FOUND);
-//    }
+        return new ResponseEntity<Void>(HttpStatus.OK);
+    }
 
 
-//    @RequestMapping(value = "/delete/{id}",method = RequestMethod.DELETE)
-//    public ResponseEntity<Order> deleteOrder(@PathVariable("id") Long id) {
-//
+    @RequestMapping(value = "/delete/{orderId}",method = RequestMethod.DELETE)
+    public ResponseEntity<Void> deleteOrder(@PathVariable("orderId") Long id) {
+
 //        // delete the whole Order from the user
 //        orders  = fectchDataService.readData();
 //        for (Order order : orders) {
@@ -58,27 +84,14 @@ public class OrderController {
 //            }
 //        }
 //        return new ResponseEntity<Order>(HttpStatus.NOT_FOUND);
-//    }
-
-    @RequestMapping(value = "/add",method = RequestMethod.POST)
-    public ResponseEntity<Void> newOrder() {
-        // adding the new order
-
-        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<Void>(HttpStatus.OK);
     }
+
 
     @RequestMapping(value = "/update/{id}",method = RequestMethod.PUT)
     public ResponseEntity<Void> updateOrder(@PathVariable("id") Long id) {
 
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
     }
-
-    @RequestMapping(value = "/homePage",method = RequestMethod.GET)
-    public ResponseEntity<Void> homePage() {
-
-        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
-    }
-
-
 
 }

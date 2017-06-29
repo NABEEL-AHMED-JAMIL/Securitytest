@@ -1,7 +1,7 @@
 package com.ballistic.security.Securitytest.model;
 
 /**
- * Created by Lycus 01 on 6/18/2017.
+ * Created by Ballistic Inc on 6/18/2017.
  */
 public class Order {
 

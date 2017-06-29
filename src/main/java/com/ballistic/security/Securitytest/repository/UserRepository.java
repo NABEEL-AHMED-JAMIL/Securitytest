@@ -5,10 +5,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * Created by Lycus 01 on 6/19/2017.
+ * Created by Ballistic Inc on 6/19/2017.
  */
 
 @Repository("userRepository")
 public interface UserRepository extends JpaRepository<User, Long> {
+
+    // find-by-email
     User findByEmail(String email);
 }

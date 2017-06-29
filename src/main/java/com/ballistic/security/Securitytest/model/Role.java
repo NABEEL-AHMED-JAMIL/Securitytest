@@ -3,7 +3,7 @@ package com.ballistic.security.Securitytest.model;
 import javax.persistence.*;
 
 /**
- * Created by Lycus 01 on 6/19/2017.
+ * Created by Ballistic Inc on 6/19/2017.
  */
 @Entity
 @Table(name = "role")
@@ -12,7 +12,7 @@ public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column(name="role")
+    @Column(name="role", nullable = false, unique = true)
     private String role;
 
     public Role() {

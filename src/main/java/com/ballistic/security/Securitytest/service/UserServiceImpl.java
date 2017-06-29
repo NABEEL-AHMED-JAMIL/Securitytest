@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 /**
- * Created by Lycus 01 on 6/19/2017.
+ * Created by Ballistic Inc on 6/19/2017.
  */
 @Service("userService")
 public class UserServiceImpl implements UserService{
@@ -23,6 +23,7 @@ public class UserServiceImpl implements UserService{
     private RoleRepository roleRepository;
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
+
 
     @Override
     public User findUserByEmail(String email) {
